@@ -23,6 +23,12 @@ public class CoinChange {
             }
         }
 
+        for(int i=0;i<noOfCoins;i++){
+            for(int j=0;j<=sum;j++){
+                System.out.print(count[i][j]+" ");
+            }
+            System.out.println();
+        }
         System.out.println(count[noOfCoins-1][sum]);
     }
 }
