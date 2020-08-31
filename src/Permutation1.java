@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Permutations {
+public class Permutation1 {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         helper(0, nums, result);
@@ -32,7 +32,7 @@ public class Permutations {
     }
 
     public static void main(String[] args) {
-        Permutations obj=new Permutations();
+        Permutation1 obj=new Permutation1();
         int arr[]={1, 2, 3};
 
         List<List<Integer>> res = obj.permute(arr);
