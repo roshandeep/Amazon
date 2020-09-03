@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class CombinationOfSum {
+public class CombinationSum3 {
+
     public List<List<Integer>> combinationSum3(int k, int n) {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
@@ -29,7 +30,7 @@ public class CombinationOfSum {
     }
 
     public static void main(String[] args) {
-        CombinationOfSum obj = new CombinationOfSum();
+        CombinationSum3 obj = new CombinationSum3();
         List<List<Integer>> res = obj.combinationSum3(3, 8);
         for (int i = 0; i < res.size(); i++) {
             for (int j = 0; j < res.get(i).size(); j++) {
