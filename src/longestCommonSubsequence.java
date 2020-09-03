@@ -22,7 +22,27 @@ public class longestCommonSubsequence {
                 }
             }
         }
-
+        printLCS(arr, s1, s2, l1, l2);
         return arr[l1][l2];
+    }
+
+    public static void printLCS(int arr[][], String s1, String s2, int l1, int l2){
+        String lcs="";
+        int i=l1, j=l2;
+        while(i>0 && j>0){
+            if(s1.charAt(i-1)==s2.charAt(j-1)){
+                lcs=s1.charAt(i-1)+lcs;
+                i--;
+                j--;
+            }
+            else
+            if(arr[i-1][j]>arr[i][j-1]){
+                i--;
+            }
+            else {
+                j--;
+            }
+        }
+        System.out.println(lcs);
     }
 }
