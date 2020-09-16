@@ -42,7 +42,7 @@ public class MergeKSortedLists {
     }
 
     public static void main(String[] args) {
-        ListNode[] lists = new ListNode[10];
+        ListNode[] lists = new ListNode[3];
 
         lists[0] = new ListNode(1);
         lists[0].next = new ListNode(5);
