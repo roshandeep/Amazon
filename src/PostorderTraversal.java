@@ -1,30 +1,29 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
-public class InorderTraversal {
-    public List<Integer> inorderTraversal(TreeNode root) {
+public class PostorderTraversal {
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res=new ArrayList<Integer>();
         Stack<TreeNode> stack=new Stack<TreeNode>();
 
-        if(root==null){
-            return res;
-        }
         TreeNode curr=root;
         while(curr!=null || stack.size()>0){
             while(curr!=null){
+                res.add(curr.val);
                 stack.push(curr);
-                curr=curr.left;
+                curr=curr.right;
             }
             curr=stack.pop();
-            res.add(curr.val);
-            curr=curr.right;
+            curr=curr.left;
         }
+        Collections.reverse(res);
         return res;
     }
 
     public static void main(String[] args) {
-        InorderTraversal obj=new InorderTraversal();
+        PostorderTraversal obj=new PostorderTraversal();
 
         TreeNode head = new TreeNode(1);
         head.left = new TreeNode(2);
@@ -34,7 +33,7 @@ public class InorderTraversal {
         head.left.left = new TreeNode(4);
         head.left.right = new TreeNode(5);
 
-        List<Integer> res= obj.inorderTraversal(head);
+        List<Integer> res= obj.postorderTraversal(head);
         for (int num: res){
             System.out.print(num + " ");
         }
