@@ -31,6 +31,13 @@ public class TopKFrequentElements {
             count++;
         }
 
+//        for(Map.Entry<Integer, Integer> e: al){
+//            lhm.put(e.getKey(), e.getValue());
+//        }
+//        for(Map.Entry<Integer, Integer> e: lhm.entrySet()){
+//            System.out.println(e.getKey() + " " + e.getValue());
+//        }
+
         return arr;
     }
 
