@@ -1,8 +1,7 @@
 public class Ratmaze {
     public static int N;
     
-    public static void main(String args[])
-    {
+    public static void main(String args[]){
         Ratmaze rat = new Ratmaze();
         int maze[][] = { { 1, 0, 0, 0 },
                             { 1, 1, 0, 1 },
