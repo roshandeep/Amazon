@@ -2,6 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+/* Constructed binary tree is
+            1
+          /   \
+        2      3
+      /  \    /  \
+    4     5  6    7
+  */
+
 public class InorderTraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res=new ArrayList<Integer>();

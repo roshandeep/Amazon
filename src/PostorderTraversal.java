@@ -3,6 +3,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
+/* Constructed binary tree is
+            1
+          /   \
+        2      3
+      /  \    /  \
+    4     5  6    7
+  */
+
 public class PostorderTraversal {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res=new ArrayList<Integer>();
@@ -22,6 +30,25 @@ public class PostorderTraversal {
         return res;
     }
 
+    public List<Integer> postorderTraversal2(TreeNode root) {
+        List<Integer> res=new ArrayList<Integer>();
+        Stack<TreeNode> stack=new Stack<TreeNode>();
+
+        stack.push(root);
+        while(stack.size()>0){
+            TreeNode curr= stack.pop();
+            res.add(curr.val);
+            if(curr.left != null){
+                stack.push(curr.left);
+            }
+            if(curr.right != null){
+                stack.push(curr.right);
+            }
+        }
+        Collections.reverse(res);
+        return res;
+    }
+
     public static void main(String[] args) {
         PostorderTraversal obj=new PostorderTraversal();
 
@@ -35,6 +62,11 @@ public class PostorderTraversal {
 
         List<Integer> res= obj.postorderTraversal(head);
         for (int num: res){
+            System.out.print(num + " ");
+        }
+        System.out.println();
+        List<Integer> res2= obj.postorderTraversal2(head);
+        for (int num: res2){
             System.out.print(num + " ");
         }
     }
